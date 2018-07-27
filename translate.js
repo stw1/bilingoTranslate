@@ -17,9 +17,9 @@ function postAjax(url, data, success) {
 // example request
 function translateS() {
     inputValue = document.getElementById('field1').value;
-    var postArguments = 'key=AIzaSyAu5F3tkRzpG-IDmeMMamVs4lu7nsLNk4o&q=' + inputValue + '&target=es';
+    var postArguments = 'key=AIzaSyA2hFa_lCXno0JIJqozSPpfGoeZGZIbmEQ&q=' + inputValue + '&target=es';
     
-    postAjax('https://translation.googleapis.com/language/translate/v2', postArguments, function(data){ console.log(data); document.getElementById('translateResult').innerHTML = data;});
+    postAjax('https://translation.googleapis.com/language/translate/v2', postArguments, function(data){ console.log(data); var obj = JSON.parse(data); var translatedText = obj.data.translations[0].translatedText; document.getElementById('translateResult').innerHTML = translatedText;});
 }
 
 
