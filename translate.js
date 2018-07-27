@@ -16,7 +16,10 @@ function postAjax(url, data, success) {
 
 // example request
 function translateS() {
-    postAjax('https://translation.googleapis.com/language/translate/v2', 'key=AIzaSyAu5F3tkRzpG-IDmeMMamVs4lu7nsLNk4o&q=cheese&target=es', function(data){ console.log(data); document.getElementById('translateResult').innerHTML = data;});
+    inputValue = document.getElementById('field1').value;
+    var postArguments = 'key=AIzaSyAu5F3tkRzpG-IDmeMMamVs4lu7nsLNk4o&q=' + inputValue + '&target=es';
+    
+    postAjax('https://translation.googleapis.com/language/translate/v2', postArguments, function(data){ console.log(data); document.getElementById('translateResult').innerHTML = data;});
 }
 
 
